@@ -9,8 +9,7 @@ from ship import Ship
 def run_game():
     pygame.init()
     ai_settings = Settings()
-    screen = pygame.display.set_mode(
-        (ai_settings.screen_width, ai_settings.screen_height))
+    screen = pygame.display.set_mode((ai_settings.screen_width, ai_settings.screen_height))
     pygame.display.set_caption("Alien Invasion")
 
     bg_colour = (230, 230, 230)
@@ -26,7 +25,6 @@ def run_game():
         screen.fill(ai_settings.bg_colour)
         ship.blitme()
 
-    pygame.display.flip()
-
+        pygame.display.flip()
 
 run_game()
