@@ -20,9 +20,9 @@ def run_game():
         bullets.update()
         gf.update_screen(ai_settings, screen, ship, bullets)
         screen.fill(ai_settings.bg_colour)
-        ship.blitme()
+        # ship.blitme()
         
-        pygame.display.flip()
+        # pygame.display.flip()
         
 run_game()
 
