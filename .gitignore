@@ -1,2 +1,7 @@
-/get-pip.py
-/__pycache__
+# Editors
+.vscode/
+.idea/
+
+__pycache__/
+*.py[cod]
+*$py.class
