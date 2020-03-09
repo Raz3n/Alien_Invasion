@@ -14,5 +14,6 @@ class Settings():
         self.bullets_allowed = 3
         
         self.alien_speed_factor = 3
+        self.ship_limit = 3
         self.alien_drop_speed = 10
         self.fleet_direction = 1
