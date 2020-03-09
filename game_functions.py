@@ -97,10 +97,19 @@ def check_bullet_alien_collisions(ai_settings, screen, ship, aliens, bullets):
     if len(aliens) == 0:
         bullets.empty()
         create_fleet(ai_settings, screen, ship, aliens)
+        
+def ship_hit(ai_settings, stats, screen, ship, aliens, bullets):
+    stats.ships_left -= 1
+    aliens.empty()
+    bullets.empty()
+    create_fleet(ai_settings, screen, ship, aliens)
+    ship.center_ship()
+    
+    sleep(0.5)
                 
-def update_aliens(ai_settings, aliens):
+def update_aliens(ai_settings, stats, screen, ship, aliens, bullets):
     check_fleet_edges(ai_settings, aliens)
     aliens.update()
     
     if pygame.sprite.spritecollideany(ship, aliens):
-        print("Ship hit!!!")
+        ship_hit(ai_settings, stats, screen, ship, aliens, bullets)
