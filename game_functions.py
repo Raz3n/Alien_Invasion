@@ -99,13 +99,16 @@ def check_bullet_alien_collisions(ai_settings, screen, ship, aliens, bullets):
         create_fleet(ai_settings, screen, ship, aliens)
         
 def ship_hit(ai_settings, stats, screen, ship, aliens, bullets):
-    stats.ships_left -= 1
-    aliens.empty()
-    bullets.empty()
-    create_fleet(ai_settings, screen, ship, aliens)
-    ship.center_ship()
+    if stats.ships_left > 0:
+        stats.ships_left -= 1
+        aliens.empty()
+        bullets.empty()
+        create_fleet(ai_settings, screen, ship, aliens)
+        ship.center_ship()
     
-    sleep(0.5)
+        sleep(0.5)
+    else:
+        stats.game_active = False
                 
 def update_aliens(ai_settings, stats, screen, ship, aliens, bullets):
     check_fleet_edges(ai_settings, aliens)
