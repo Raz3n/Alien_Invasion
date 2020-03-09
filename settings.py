@@ -5,9 +5,9 @@ class Settings():
         self.screen_height = 800
         self.bg_colour = (230, 230, 230)
         
-        self.ship_speed_factor = 6
+        self.ship_speed_factor = 10
         
-        self.bullet_speed = 5
+        self.bullet_speed = 15
         self.bullet_width = 3
         self.bullet_height = 15
         self.bullet_colour = (60, 60, 60)
